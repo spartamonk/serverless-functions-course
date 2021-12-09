@@ -5,9 +5,12 @@ const person ={
 exports.handler = async (event, context, cb) => {
   
   return {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     statusCode: 200,
     // body: JSON.stringify(person),
-    body: 'Our First Netlify Function'
+    body: 'Our First Netlify Function',
   }
 }
 
