@@ -15,21 +15,33 @@ const product = await airtable.retrieve(id)
   try {
    if(product.error) {
 return {
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
   statusCode: 404,
   body: `No product with id: ${id}`,
 }
    } return {
+     headers: {
+       'Access-Control-Allow-Origin': '*',
+     },
      statusCode: 200,
      body: JSON.stringify(product),
    }
   } catch (error) {
    return {
-    statusCode: 500,
-    body: 'Server Error'
+     headers: {
+       'Access-Control-Allow-Origin': '*',
+     },
+     statusCode: 500,
+     body: 'Server Error',
    }
   }
  }
 return {
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
   statusCode: 400,
   body: `Please provide id`,
 }

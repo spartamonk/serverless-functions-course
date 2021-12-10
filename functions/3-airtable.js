@@ -15,6 +15,9 @@ const url = image[0].url
 return {id, name, url, price}
 })
  return {
+   headers: {
+     'Access-Control-Allow-Origin': '*',
+   },
    statusCode: 200,
    // body: JSON.stringify(person),
    body: JSON.stringify(products),
@@ -22,6 +25,9 @@ return {id, name, url, price}
  }
  catch(error) {
 return {
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
   statusCode: 500,
   body: 'Server Error',
 }
