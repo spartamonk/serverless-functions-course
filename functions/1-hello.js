@@ -9,7 +9,6 @@ exports.handler = async (event, context, cb) => {
       'Access-Control-Allow-Origin': '*',
     },
     statusCode: 200,
-    // body: JSON.stringify(person),
     body: 'Our First Netlify Function',
   }
 }
